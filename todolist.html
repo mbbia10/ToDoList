@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="todolist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="task-container">
+        <h1 style="color: aliceblue;">Lista de Tarefas</h1>
+        <div class="input-container">
+            <input class="center-input" type="text" id="new-task" placeholder="Adicione uma nova tarefa">
+            <input type="text" id="task-desc" class="center-input" placeholder="Adicione uma descrição">
+            <select id="task-type" class="center-input" onchange="toggleTimerField()">
+                <option value="geral">Geral</option>
+                <option value="escolar">Escolar</option>
+            </select>
+            <input type="date" id="task-date" class="center-input">
+            <div id="timer-option" style="display: none;">
+                <label for="task-timer">Temporizador:</label>
+                <input type="time" id="task-timer" class="center-input">
+            </div>
+            <button class="center-button" onclick="addTask()">+</button>
+        </div>
+        
+        <div class="task-list-container">
+            <h2>Tarefas Abertas</h2>
+            <ul id="task-list-open"></ul>
+        </div>
+
+        <div class="task-list-container">
+            <h2>Tarefas Concluídas</h2>
+            <ul id="task-list-done"></ul>
+        </div>
+
+        <div class="task-count-container">
+            <span id="task-count">Total de Tarefas: 0</span>
+        </div>
+    </div>
+
+    <script src="todolist.js"></script>
+</body>
+</html>
